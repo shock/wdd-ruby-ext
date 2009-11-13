@@ -22,4 +22,7 @@ such.
 == Copyright
 
 Copyright (c) 2009 shock. See LICENSE for details.
+<<<<<<< HEAD:README.rdoc
 
+=======
+>>>>>>> 0aa60a70e9983277e4d0ac757d74b7fde91aa1bf:README.rdoc
