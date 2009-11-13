@@ -1,6 +1,12 @@
 = wdd-ruby-ext
 
-Description goes here.
+Handy Ruby extensions.  
+
+I don't take credit for all of these.  Some were 
+ripped from blog postings and other sources.  I apologize for failing to give
+credit where credit is due.  I will try to give credit for new additions 
+added in the future and will happily give proper credit if I am alerted to 
+such.
 
 == Note on Patches/Pull Requests
  
@@ -16,3 +22,4 @@ Description goes here.
 == Copyright
 
 Copyright (c) 2009 shock. See LICENSE for details.
+

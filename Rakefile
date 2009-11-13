@@ -5,8 +5,8 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "wdd-ruby-ext"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Handy extensions to the Ruby base class.}
+    gem.description = %Q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
     gem.email = "billdoughty@capitalthought.com"
     gem.homepage = "http://github.com/shock/wdd-ruby-ext"
     gem.authors = ["shock"]
