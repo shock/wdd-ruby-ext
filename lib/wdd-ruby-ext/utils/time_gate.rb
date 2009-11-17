@@ -1,6 +1,6 @@
 # This is a time based throttler, with class scope.
 # When set, the waitTimeGate function will block or return true until the period set has elapsed
-module WDDUtilities
+module WDD::Utilities
   class TimeGate
     def set seconds
       @gate_time = Time.now + seconds

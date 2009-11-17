@@ -1,6 +1,6 @@
 # require 'pp'
 
-module SimpleDebug
+module WDD::SimpleDebug
   
   public
   @__debugLevel = -1
