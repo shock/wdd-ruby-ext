@@ -42,7 +42,7 @@ Gem::Specification.new do |s|
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
   s.rubygems_version = %q{1.3.6}
-  s.summary = %q{Handy extensions to the Ruby base class.}
+  s.summary = %q{Handy extensions to the Ruby base classes and other utilities.}
   s.test_files = [
     "spec/spec_helper.rb",
      "spec/wdd-ruby-ext_spec.rb"
