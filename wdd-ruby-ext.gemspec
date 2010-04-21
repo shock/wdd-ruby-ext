@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wdd-ruby-ext}
-  s.version = "0.0.0"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
-  s.date = %q{2009-11-13}
+  s.date = %q{2010-04-21}
   s.description = %q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
   s.email = %q{billdoughty@capitalthought.com}
   s.extra_rdoc_files = [
@@ -24,14 +24,24 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "lib/wdd-ruby-ext.rb",
+     "lib/wdd-ruby-ext/http.rb",
+     "lib/wdd-ruby-ext/numbers.rb",
+     "lib/wdd-ruby-ext/string.rb",
+     "lib/wdd-ruby-ext/system.rb",
+     "lib/wdd-ruby-ext/time.rb",
+     "lib/wdd-ruby-ext/utils.rb",
+     "lib/wdd-ruby-ext/utils/helpers.rb",
+     "lib/wdd-ruby-ext/utils/simpledebug.rb",
+     "lib/wdd-ruby-ext/utils/time_gate.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
-     "spec/wdd-ruby-ext_spec.rb"
+     "spec/wdd-ruby-ext_spec.rb",
+     "wdd-ruby-ext.gemspec"
   ]
   s.homepage = %q{http://github.com/shock/wdd-ruby-ext}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Handy extensions to the Ruby base class.}
   s.test_files = [
     "spec/spec_helper.rb",

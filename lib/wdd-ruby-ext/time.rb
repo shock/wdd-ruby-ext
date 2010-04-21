@@ -1,3 +1,8 @@
+class Date
+  def to_timezone
+    Time.zone.parse(self.strftime)
+  end
+end
 
 class DateTime
   LOG_TIME_FORMAT = "%a %Y-%m-%d %H:%M:%S"
