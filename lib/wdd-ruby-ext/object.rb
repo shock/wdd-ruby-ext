@@ -5,7 +5,11 @@ class Object
   def deep_dup
     return @@__duping_registry[object_id] if @@__duping_registry[object_id]
     
-    deep_duping_obj = dup
+    begin
+      deep_duping_obj = dup
+    rescue TypeError
+      return self
+    end
     deep_duping_obj.instance_variables.each do |var|
       val = deep_duping_obj.instance_variable_get(var)
       begin

@@ -2,6 +2,9 @@
 
 require 'rubygems'
 require 'wdd-ruby-ext/system'
+require 'wdd-ruby-ext/object'
+require 'wdd-ruby-ext/array'
+require 'wdd-ruby-ext/hash'
 require 'wdd-ruby-ext/string'
 require 'wdd-ruby-ext/http'
 require 'wdd-ruby-ext/time'
