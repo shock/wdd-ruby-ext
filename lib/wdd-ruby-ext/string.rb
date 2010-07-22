@@ -59,4 +59,17 @@ class String
     end
   end
   
+  # trims the string to the nearest word boundary ensuring that the resulting length is less than max_length
+  def trim_to_word( max_length )
+    string = self
+    if string.length > max_length
+      string = string[0..max_length-4]
+      while string[-1,1] =~ /[\w]/ && string.length > 1
+        string = string[0..string.length-2]
+      end
+      string += "..."
+    end
+    string
+  end
+  
 end
