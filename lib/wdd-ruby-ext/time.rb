@@ -1,7 +1,9 @@
 class Date
+  
   def to_timezone
-    Time.zone.parse(self.strftime)
+    @day_start_timezone ||= ActiveSupport::TimeWithZone.new( nil, Time.zone, Time.utc( self.year, self.month, self.day ) )
   end
+  
 end
 
 class DateTime
