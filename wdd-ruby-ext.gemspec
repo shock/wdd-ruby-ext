@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wdd-ruby-ext}
-  s.version = "0.0.10"
+  s.version = "0.0.11"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
-  s.date = %q{2010-08-09}
+  s.date = %q{2010-08-22}
   s.description = %q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
   s.email = %q{billdoughty@capitalthought.com}
   s.extra_rdoc_files = [
@@ -33,9 +33,11 @@ Gem::Specification.new do |s|
      "lib/wdd-ruby-ext/system.rb",
      "lib/wdd-ruby-ext/time.rb",
      "lib/wdd-ruby-ext/utils.rb",
+     "lib/wdd-ruby-ext/utils/fixed_point.rb",
      "lib/wdd-ruby-ext/utils/helpers.rb",
      "lib/wdd-ruby-ext/utils/simpledebug.rb",
      "lib/wdd-ruby-ext/utils/time_gate.rb",
+     "spec/lib/utils/fixed_point_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
      "spec/wdd-ruby-ext_spec.rb",
@@ -44,10 +46,11 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/shock/wdd-ruby-ext}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{Handy extensions to the Ruby base classes and other utilities.}
   s.test_files = [
-    "spec/spec_helper.rb",
+    "spec/lib/utils/fixed_point_spec.rb",
+     "spec/spec_helper.rb",
      "spec/wdd-ruby-ext_spec.rb"
   ]
 
@@ -55,7 +58,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
