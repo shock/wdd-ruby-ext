@@ -17,8 +17,8 @@ module WDD
         end
       end
   
-      def wait_while_true guard = true
-        while Time.now < @gate_time && guard do
+      def wait_while_true guard = Proc.new{true}
+        while Time.now < @gate_time && guard.call do
           sleep 0.2
         end
       end
