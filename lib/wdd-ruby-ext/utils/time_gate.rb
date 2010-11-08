@@ -17,6 +17,12 @@ module WDD
         end
       end
   
+      def wait_while_true guard = true
+        while Time.now < @gate_time && guard do
+          sleep 0.2
+        end
+      end
+  
       def initialize
         @gate_time = Time.now
       end
