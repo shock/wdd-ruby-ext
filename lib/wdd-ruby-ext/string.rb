@@ -42,20 +42,28 @@ class String
   # +key_value_pairs+ is an array of [key,value] pairs where each key is a regular expression 
   # and the value is the value to substitute when that regexp is matched.
   #
-  # Unlike mgsub, this method allows the match string from the regexp to be embedded in the replace
-  # string.  If the replace string contains the characters '$1', they will be replaced with the
-  # match and the result will be used to replace the match in the original string.
+  # Unlike mgsub, this method allows parenthesized subsections of the match string from the regexp 
+  # to be embedded in the replace string.  The normal variables are available in the replacement
+  # string.
   #
   # eg.
   #
-  # >> "this is that".mgpsub( [ [/that/, 'really $1!'], [/this/, 'that'] ] ) 
+  # >> "this is that".mgpsub( [ [/(that)/, 'really $1!'], [/this/, 'that'] ] ) 
   # => that is really that!"
   #
   def mgpsub(key_value_pairs=[].freeze)
-    regexp_fragments = key_value_pairs.collect { |k,v| k }
-    gsub(Regexp.union(*regexp_fragments)) do |match|
-      replacement_term = key_value_pairs.detect{|k,v| k=~match}[1]
-      replacement_term.gsub(/\$1/, match)
+    def mgpsub(string, key_value_pairs=[].freeze)
+      regexp_fragments = key_value_pairs.collect { |k,v| k }
+      string.gsub(Regexp.union(*regexp_fragments)) do |match|
+        replacement_term = key_value_pairs.detect{|k,v| k=~match}[1]
+        vars = %w{$1 $2 $3 $4 $5 $6 $7 $8 $9 $` $& $’}
+        vars.each do |var|
+          tm_safe_log var
+          tm_safe_log eval(var)||''
+          replacement_term.gsub!( Regexp.compile("\\"+var), eval(var)||'' )
+        end
+        replacement_term
+      end
     end
   end
   
