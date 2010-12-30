@@ -51,14 +51,12 @@ class String
   # >> "this is that".mgpsub( [ [/(that)/, 'really $1!'], [/this/, 'that'] ] ) 
   # => that is really that!"
   #
-  def mgpsub(string, key_value_pairs=[].freeze)
+  def mgpsub(key_value_pairs=[].freeze)
     regexp_fragments = key_value_pairs.collect { |k,v| k }
-    string.gsub(Regexp.union(*regexp_fragments)) do |match|
+    gsub(Regexp.union(*regexp_fragments)) do |match|
       replacement_term = key_value_pairs.detect{|k,v| k=~match}[1]
-      vars = %w{$1 $2 $3 $4 $5 $6 $7 $8 $9 $` $& $’}
+      vars = ["$1", "$2", "$3", "$4", "$5", "$6", "$7", "$8", "$9", "$`", "$&", "$'"]
       vars.each do |var|
-        tm_safe_log var
-        tm_safe_log eval(var)||''
         replacement_term.gsub!( Regexp.compile("\\"+var), eval(var)||'' )
       end
       replacement_term

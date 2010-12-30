@@ -1,0 +1,13 @@
+PATH
+  remote: .
+  specs:
+    wdd-ruby-ext (0.2.2)
+
+GEM
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  wdd-ruby-ext!
