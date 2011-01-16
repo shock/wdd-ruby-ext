@@ -6,7 +6,7 @@
 # wait on the gate to ensure that a certain amount of time has passed before continuing.
 # This is specifically useful for throttling API calls.
 module WDD
-  module Utilities
+  module Utils
     class TimeGate
       def set seconds
         @gate_time = Time.now + seconds

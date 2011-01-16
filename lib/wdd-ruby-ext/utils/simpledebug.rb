@@ -1,7 +1,7 @@
 # require 'pp'
 
 module WDD
-  module Utilities
+  module Utils
     module SimpleDebug
   
       public

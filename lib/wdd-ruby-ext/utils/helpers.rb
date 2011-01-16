@@ -1,5 +1,5 @@
 module WDD
-  module Utilities
+  module Utils
     def printvar val_name, val
       puts "#{val_name.to_s}: #{val.inspect}"
     end

@@ -8,21 +8,6 @@ credit where credit is due.  I will try to give credit for new additions
 added in the future and will happily give proper credit if I am alerted to 
 such.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but
-   bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
-
 == Copyright
 
-Copyright (c) 2009 shock. See LICENSE for details.
-<<<<<<< HEAD:README.rdoc
-
-=======
->>>>>>> 0aa60a70e9983277e4d0ac757d74b7fde91aa1bf:README.rdoc
+Copyright (c) 2010 shock. See LICENSE for details.

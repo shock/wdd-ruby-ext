@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
-  s.date = %q{2010-12-30}
+  s.date = %q{2011-01-16}
   s.description = %q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
   s.email = %q{billdoughty@capitalthought.com}
   s.extra_rdoc_files = [
@@ -53,6 +53,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Handy extensions to the Ruby base classes and other utilities.}
   s.test_files = [
     "spec/lib/utils/fixed_point_spec.rb",
+     "spec/lib/utils/pretty_xml_spec.rb",
      "spec/spec_helper.rb",
      "spec/wdd-ruby-ext_spec.rb"
   ]
@@ -63,11 +64,14 @@ Gem::Specification.new do |s|
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
+      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.4"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
+      s.add_dependency(%q<nokogiri>, ["~> 1.4.4"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
+    s.add_dependency(%q<nokogiri>, ["~> 1.4.4"])
   end
 end
 
