@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wdd-ruby-ext}
-  s.version = "0.2.3"
+  s.version = "0.3.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     ".rvmrc",
      "Gemfile",
      "Gemfile.lock",
      "LICENSE",
@@ -31,6 +32,7 @@ Gem::Specification.new do |s|
      "lib/wdd-ruby-ext/http.rb",
      "lib/wdd-ruby-ext/numbers.rb",
      "lib/wdd-ruby-ext/object.rb",
+     "lib/wdd-ruby-ext/resources/pretty_xml.xsl",
      "lib/wdd-ruby-ext/string.rb",
      "lib/wdd-ruby-ext/system.rb",
      "lib/wdd-ruby-ext/time.rb",
@@ -38,9 +40,11 @@ Gem::Specification.new do |s|
      "lib/wdd-ruby-ext/utils/fixed_point.rb",
      "lib/wdd-ruby-ext/utils/hash_object.rb",
      "lib/wdd-ruby-ext/utils/helpers.rb",
+     "lib/wdd-ruby-ext/utils/pretty_xml.rb",
      "lib/wdd-ruby-ext/utils/simpledebug.rb",
      "lib/wdd-ruby-ext/utils/time_gate.rb",
      "spec/lib/utils/fixed_point_spec.rb",
+     "spec/lib/utils/pretty_xml_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
      "spec/wdd-ruby-ext_spec.rb",
