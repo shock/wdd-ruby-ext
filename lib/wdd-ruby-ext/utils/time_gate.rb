@@ -31,26 +31,26 @@ module WDD
       def initialize
         @gate_time = Time.now
       end
-    end
-  
-    class << self
-      # Evaluated the passed block and returns the elapsed wall clock time.
-      def elapsed_time &block
-        start_time = Time.now
-        yield
-        Time.now - start_time
-      end
+
+      class << self
+        # Evaluated the passed block and returns the elapsed wall clock time.
+        def elapsed_time &block
+          start_time = Time.now
+          yield
+          Time.now - start_time
+        end
       
-      # Sleeps the specified interval.  If a block is passed, it will be evaluated every +guard_interval+ seconds.
-      # If it evaluates to true, the sleep will be interrupted and control will be returned to the caller.
-      def interruptable_sleep sleep_time, guard_interval=0.5
-        if block_given?
-          while( yield && sleep_time > 0 ) 
-            sleep guard_interval
-            sleep_time -= guard_interval
+        # Sleeps the specified interval.  If a block is passed, it will be evaluated every +guard_interval+ seconds.
+        # If it evaluates to true, the sleep will be interrupted and control will be returned to the caller.
+        def interruptable_sleep sleep_time, guard_interval=0.5
+          if block_given?
+            while( yield && sleep_time > 0 ) 
+              sleep guard_interval
+              sleep_time -= guard_interval
+            end
+          else
+            sleep sleep_time
           end
-        else
-          sleep sleep_time
         end
       end
     end
