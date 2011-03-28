@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wdd-ruby-ext}
-  s.version = "0.3.3"
+  s.version = "0.4.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
-  s.date = %q{2011-02-13}
+  s.date = %q{2011-03-27}
   s.description = %q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
   s.email = %q{billdoughty@capitalthought.com}
   s.extra_rdoc_files = [
@@ -42,6 +42,7 @@ Gem::Specification.new do |s|
      "lib/wdd-ruby-ext/utils/helpers.rb",
      "lib/wdd-ruby-ext/utils/pretty_xml.rb",
      "lib/wdd-ruby-ext/utils/simpledebug.rb",
+     "lib/wdd-ruby-ext/utils/spinner.rb",
      "lib/wdd-ruby-ext/utils/test_server.rb",
      "lib/wdd-ruby-ext/utils/time_gate.rb",
      "spec/lib/utils/fixed_point_spec.rb",
