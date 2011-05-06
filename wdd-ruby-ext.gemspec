@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
-  s.date = %q{2011-03-27}
+  s.date = %q{2011-05-06}
   s.description = %q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
   s.email = %q{billdoughty@capitalthought.com}
   s.extra_rdoc_files = [
@@ -71,13 +71,16 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_development_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.4"])
+      s.add_runtime_dependency(%q<eventmachine>, ["~> 0.12.10"])
     else
       s.add_dependency(%q<rspec>, [">= 1.2.9"])
       s.add_dependency(%q<nokogiri>, ["~> 1.4.4"])
+      s.add_dependency(%q<eventmachine>, ["~> 0.12.10"])
     end
   else
     s.add_dependency(%q<rspec>, [">= 1.2.9"])
     s.add_dependency(%q<nokogiri>, ["~> 1.4.4"])
+    s.add_dependency(%q<eventmachine>, ["~> 0.12.10"])
   end
 end
 
