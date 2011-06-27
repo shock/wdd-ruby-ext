@@ -36,6 +36,9 @@ module HTTPHandler
     if sleep_time = http_request[:query_params][:sleep]
       sleep( sleep_time.to_i )
     end
+    if sleep_time = http_request[:query_params][:random_sleep]
+      sleep( rand(sleep_time.to_i * 1000).to_f/1000)
+    end
     unless return_data = http_request[:query_params][:return_data]
       return_data = "Your HTTP Request(#{http_request[:request]}) was processed by the TestServer."
     end
@@ -60,37 +63,35 @@ module TestServerModule
   end
   
   def post_init
-    puts 'got connection'
+    logger.debug 'got connection'
   end
   
   def receive_data(data)
-    puts "Got data:\n#{data}"
-    if http_request = http_request?( data )
-      return_data = process_http_request( http_request )
-    else
-      return_data = "Your request was processed by the TestServer."
+    Thread.new do
+      logger.debug "Got data:\n#{data}"
+      if http_request = http_request?( data )
+        return_data = process_http_request( http_request )
+      else
+        return_data = "Your request was processed by the TestServer."
+      end
+      send_data(return_data)
+      logger.debug "Sent: #{return_data}"
+      close_connection_after_writing
     end
-    send_data(return_data)
-    puts "Sent: #{return_data}"
-    close_connection_after_writing
   end
   
-  def puts string
-    TestServer.logger.debug( string )
+  def logger
+    TestServer.logger
   end
   
 end
 
 
 class TestServer
-  @@logger = Logger.new(STDOUT)
-  @@thread = nil
+  @@logger = nil
+  @@server_thread = nil
   PORT = 1234
 
-  def self.puts string
-    self.logger.debug( string )
-  end
-  
   def self.logger
     @@logger
   end
@@ -99,9 +100,12 @@ class TestServer
     @@logger = logger
   end
   
-  def self.startup( port=PORT )
-    return if @@thread
-    @@thread = Thread.new do 
+  def self.startup( port=PORT, options={} )
+    @@logger ||= Logger.new(STDOUT)
+    @@logger.level = options[:logger_level] || Logger::DEBUG
+    @@multi_threaded = options[:multi_threaded] || false
+    return if @@server_thread
+    @@server_thread = Thread.new do 
       begin
         EM.run do
           EM.start_server "0.0.0.0", port, TestServerModule
@@ -109,15 +113,15 @@ class TestServer
       rescue Interrupt
       end
     end
-    puts "TestServer listening on port #{port}."
+    logger.info "TestServer listening on port #{port}."
   end
 
   def self.shutdown
-    return unless @@thread
-    @@thread.kill
-    @@thread.join
-    puts "TestServer stopped."
-    @@thread = nil
+    return unless @@server_thread
+    @@server_thread.kill
+    @@server_thread.join
+    logger.info "TestServer stopped."
+    @@server_thread = nil
   end
 end
 
