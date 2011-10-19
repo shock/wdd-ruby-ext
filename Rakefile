@@ -7,7 +7,7 @@ begin
     gem.name = "wdd-ruby-ext"
     gem.summary = %Q{Handy extensions to the Ruby base classes and other utilities.}
     gem.description = %Q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
-    gem.email = "billdoughty@capitalthought.com"
+    gem.email = "github@wdoughty.net"
     gem.homepage = "http://github.com/shock/wdd-ruby-ext"
     gem.authors = ["shock"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
