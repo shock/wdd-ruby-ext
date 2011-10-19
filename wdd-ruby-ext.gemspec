@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = %q{wdd-ruby-ext}
-  s.version = "0.4.3"
+  s.version = "0.4.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
-  s.date = %q{2011-08-30}
+  s.date = %q{2011-10-19}
   s.description = %q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
-  s.email = %q{billdoughty@capitalthought.com}
+  s.email = %q{github@wdoughty.net}
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
