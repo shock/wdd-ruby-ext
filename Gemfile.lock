@@ -1,11 +1,8 @@
 PATH
   remote: .
   specs:
-    wdd-ruby-ext (0.5.0)
+    wdd-ruby-ext (0.5.1)
       eventmachine (~> 0.12.10)
-      eventmachine (~> 0.12.10)
-      jeweler
-      nokogiri (~> 1.4.1)
       nokogiri (~> 1.4.1)
       wdd-ruby-ext
 
@@ -13,17 +10,7 @@ GEM
   remote: http://rubygems.org/
   specs:
     eventmachine (0.12.10)
-    git (1.2.5)
-    jeweler (1.8.4)
-      bundler (~> 1.0)
-      git (>= 1.2.5)
-      rake
-      rdoc
-    json (1.7.5)
     nokogiri (1.4.7)
-    rake (0.8.7)
-    rdoc (3.12)
-      json (~> 1.4)
 
 PLATFORMS
   ruby
