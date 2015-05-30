@@ -49,7 +49,7 @@ module WDD
 
       # Lightens the color by +percentage+
       def lighten percentage
-        raise "Invalid multiplier #{multiplier}.  Should be >= 0 and <= 100." if percentage < 0 || percentage > 100
+        raise "Invalid percentage #{percentage}.  Should be >= 0 and <= 100." if percentage < 0 || percentage > 100
         multiplier = percentage.to_f / 100
         new_red = (@red+(multiplier*(255-@red))).min(255).to_i
         new_green = (@green+(multiplier*(255-@green))).min(255).to_i
