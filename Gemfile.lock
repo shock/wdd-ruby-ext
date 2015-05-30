@@ -1,13 +1,12 @@
 PATH
   remote: .
   specs:
-    wdd-ruby-ext (0.5.1)
+    wdd-ruby-ext (0.6.0)
       eventmachine (~> 0.12.10)
-      nokogiri (~> 1.4.1)
-      wdd-ruby-ext
+      nokogiri (>= 1.4.1)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     eventmachine (0.12.10)
     nokogiri (1.4.7)
@@ -17,3 +16,6 @@ PLATFORMS
 
 DEPENDENCIES
   wdd-ruby-ext!
+
+BUNDLED WITH
+   1.10.1

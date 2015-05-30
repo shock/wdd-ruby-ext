@@ -4,14 +4,14 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = %q{wdd-ruby-ext}
+  s.name = "wdd-ruby-ext"
   s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["shock"]
-  s.date = %q{2012-09-14}
-  s.description = %q{Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects.}
-  s.email = %q{github@wdoughty.net}
+  s.date = "2015-05-30"
+  s.description = "Some of these are borrowed.  Some are original.  This gem simply provides a single place to source control them all for incorporation into other projects."
+  s.email = "github@wdoughty.net"
   s.extra_rdoc_files = [
     "LICENSE",
     "README.rdoc"
@@ -53,30 +53,26 @@ Gem::Specification.new do |s|
     "spec/wdd-ruby-ext_spec.rb",
     "wdd-ruby-ext.gemspec"
   ]
-  s.homepage = %q{http://github.com/shock/wdd-ruby-ext}
+  s.homepage = "http://github.com/shock/wdd-ruby-ext"
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.7}
-  s.summary = %q{Handy extensions to the Ruby base classes and other utilities.}
+  s.rubygems_version = "1.8.15"
+  s.summary = "Handy extensions to the Ruby base classes and other utilities."
 
   if s.respond_to? :specification_version then
-    current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<wdd-ruby-ext>, [">= 0"])
       s.add_development_dependency(%q<rspec>, ["~> 1.3"])
-      s.add_runtime_dependency(%q<nokogiri>, ["~> 1.4.1"])
+      s.add_runtime_dependency(%q<nokogiri>, [">= 1.4.1"])
       s.add_runtime_dependency(%q<eventmachine>, ["~> 0.12.10"])
     else
-      s.add_dependency(%q<wdd-ruby-ext>, [">= 0"])
       s.add_dependency(%q<rspec>, ["~> 1.3"])
-      s.add_dependency(%q<nokogiri>, ["~> 1.4.1"])
+      s.add_dependency(%q<nokogiri>, [">= 1.4.1"])
       s.add_dependency(%q<eventmachine>, ["~> 0.12.10"])
     end
   else
-    s.add_dependency(%q<wdd-ruby-ext>, [">= 0"])
     s.add_dependency(%q<rspec>, ["~> 1.3"])
-    s.add_dependency(%q<nokogiri>, ["~> 1.4.1"])
+    s.add_dependency(%q<nokogiri>, [">= 1.4.1"])
     s.add_dependency(%q<eventmachine>, ["~> 0.12.10"])
   end
 end
